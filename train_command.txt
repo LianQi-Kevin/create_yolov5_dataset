@@ -1,0 +1,1 @@
+python train.py --data ./dataset_H4animal/H4animal.yaml --cfg ./dataset_H4animal/H4animalyolov5l.yaml --weights model/yolov5l6.pt --batch-size 48 --epochs 500
