@@ -1,0 +1,17 @@
+<annotation>
+	<folder>default folder</folder>
+	<filename>2012_003058.xml</filename>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<segmented>0</segmented>
+	<object>
+		<name>person</name>
+		<bndbox>
+			<xmin>461</xmin>
+			<ymin>129</ymin>
+			<xmax>494</xmax>
+			<ymax>239</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,22 @@
+<annotation>
+	<folder>example</folder>
+	<filename>cats_099.xml</filename>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>474</width>
+		<height>237</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cat</name>
+		<bndbox>
+			<xmin>226</xmin>
+			<ymin>1</ymin>
+			<xmax>395</xmax>
+			<ymax>237</ymax>
+		</bndbox>
+	</object>
+</annotation>

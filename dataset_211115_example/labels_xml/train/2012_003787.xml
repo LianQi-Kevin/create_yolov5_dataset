@@ -1,0 +1,22 @@
+<annotation>
+	<folder>example</folder>
+	<filename>2012_003787.xml</filename>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>400</width>
+		<height>339</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>person</name>
+		<bndbox>
+			<xmin>229</xmin>
+			<ymin>176</ymin>
+			<xmax>357</xmax>
+			<ymax>339</ymax>
+		</bndbox>
+	</object>
+</annotation>

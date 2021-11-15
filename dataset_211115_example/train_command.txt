@@ -1,0 +1,1 @@
+python train.py --data ./dataset_211115_example/data/example.yaml --cfg ./dataset_211115_example/cfg/yolov5s.yaml --weights yolov5s.pt --batch-size 48 --epochs 500

@@ -1,0 +1,22 @@
+<annotation>
+	<folder>example</folder>
+	<filename>dogs_052.xml</filename>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>474</width>
+		<height>316</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>dog</name>
+		<bndbox>
+			<xmin>107</xmin>
+			<ymin>15</ymin>
+			<xmax>450</xmax>
+			<ymax>316</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,31 @@
+<annotation>
+	<folder>example</folder>
+	<filename>dogs_and_cats_086.xml</filename>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>474</width>
+		<height>468</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>dog</name>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>116</ymin>
+			<xmax>162</xmax>
+			<ymax>468</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>dog</name>
+		<bndbox>
+			<xmin>168</xmin>
+			<ymin>26</ymin>
+			<xmax>474</xmax>
+			<ymax>379</ymax>
+		</bndbox>
+	</object>
+</annotation>

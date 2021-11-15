@@ -1,0 +1,4 @@
+names: [cat, dog, horse, person]
+nc: 4
+train: ./dataset_211115_example/images/train/
+val: ./dataset_211115_example/images/val/

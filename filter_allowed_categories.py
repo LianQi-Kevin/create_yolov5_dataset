@@ -99,7 +99,7 @@ scale = 0.9
 # 允许的标签类别
 allow_sort = ["cat", "dog", "horse","person"]
 # 备注标签
-Floder = "H4animal"
+Floder = "example"
 # 训练时使用的预训练模型 yolov5m/s/x/l/n
 model_name = "yolov5s"
 # 支持的模型类别
@@ -150,13 +150,13 @@ filter_allowed_categories(VOCxml_file_dir, source_xml, source_img, allow_sort, i
 # 获取标签数量字典
 for i in range(len(allow_sort)):
     sort_dict = get_sort_num(source_xml, allow_sort)
-    print(sort_dict)
+    # print(sort_dict)
 
     # 取出字典中值最小的标签
     min_sort = min(sort_dict, key=sort_dict.get)
     min_value = sort_dict[min_sort]
-    print(min_sort)
-    print(min_value)
+    # print(min_sort)
+    # print(min_value)
 
     mv_xml_num = int(min_value * (1 - scale))
     print("will mv " + str(mv_xml_num) + " files to " + str(labels_xml_val))
@@ -174,9 +174,9 @@ for i in range(len(allow_sort)):
             cp_file_list_train = list(set(cp_file_list_train))
             cp_file_list_val = list(set(cp_file_list_val))
     print(cp_file_list_val)
-    print(len(cp_file_list_val))
+    # print(len(cp_file_list_val))
     print(cp_file_list_train)
-    print(len(cp_file_list_train))
+    # print(len(cp_file_list_train))
 
     for a in cp_file_list_val:
         if a in cp_file_list_train:
@@ -208,7 +208,7 @@ data_w.close()
 for sort in cfg:
     basic_cfg = open("resource/cfg/" + sort + ".yaml", "r", encoding='utf-8')
     basic_yaml = yaml.load(basic_cfg.read(), Loader=yaml.Loader)
-    print(basic_yaml)
+    # print(basic_yaml)
     basic_yaml["nc"] = len(allow_sort)
     data_w = open(cfg_dir +  sort + ".yaml", 'w')
     yaml.dump(basic_yaml, data_w)

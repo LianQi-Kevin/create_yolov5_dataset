@@ -1,0 +1,26 @@
+<annotation>
+  <folder>test</folder>
+  <filename>dogs_086</filename>
+  <path>dogs_086.jpg</path>
+  <source>
+    <database>Unknown</database>
+  </source>
+  <size>
+    <width>474</width>
+    <height>316</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>dog</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>63</xmin>
+      <ymin>30</ymin>
+      <xmax>332</xmax>
+      <ymax>316</ymax>
+    </bndbox>
+  </object>
+</annotation>
