@@ -144,7 +144,7 @@ def crate_xml_file(write_path,file_name_,new_bndbox,Folder=None,img_path=None):
         database = ET.SubElement(source, 'database')
         database.text = 'Unknown'
         if img_path != None:
-            img = cv2.imread(img_path + file_name_[:-4] + '.jpg')
+            img = cv2.imread(img_path + file_name_[:-4] + os.path.splitext(os.listdir(img_path)[0])[-1])
             # print(img.shape)
             size = ET.SubElement(root, 'size')
             width = ET.SubElement(size, 'width')
@@ -250,10 +250,10 @@ def data_enhancement(seq, AUGLOOP, AUGPath, source_img_path, source_xml_path, fi
         # copy the xmlfile to aug path
         shutil.copy(os.path.join(source_xml_path, filename), AUG_XML_PATH)
         # copy the picture to aug path
-        shutil.copy(os.path.join(source_img_path, filename[:-4] + '.jpg'), AUG_IMG_PATH)
+        shutil.copy(os.path.join(source_img_path, filename[:-4] + os.path.splitext(os.listdir(source_img_path)[0])[-1]), AUG_IMG_PATH)
         # rename the copied file and create variables
         Renamesxml = renamesOldName(AUG_XML_PATH, filename)
-        Renamesimg = renamesOldName(AUG_IMG_PATH, filename[:-4] + '.jpg')
+        Renamesimg = renamesOldName(AUG_IMG_PATH, filename[:-4] + os.path.splitext(os.listdir(source_img_path)[0])[-1])
         xmlNewName,xmlOldname = Renamesxml[1],Renamesxml[0]
         imgNewName,imgOldname = Renamesimg[1],Renamesimg[0]
 
@@ -289,10 +289,10 @@ def data_enhancement(seq, AUGLOOP, AUGPath, source_img_path, source_xml_path, fi
 
             # store the changed picture
             image_aug = seq_det.augment_images([img])[0]
-            new_image_file = os.path.join(AUG_IMG_PATH, new_filename + ".jpg")
+            new_image_file = os.path.join(AUG_IMG_PATH, new_filename + os.path.splitext(os.listdir(source_img_path)[0])[-1])
             image_auged = bbs.draw_on_image(image_aug, thickness=0)
             Image.fromarray(image_auged).save(new_image_file)
-            print(AUG_IMG_PATH + new_filename + ".jpg")
+            print(AUG_IMG_PATH + new_filename + os.path.splitext(os.listdir(source_img_path)[0])[-1])
 
             # Store the changed XML
             change_bndbox_to_newbndbox(source_xml_path,AUG_XML_PATH,new_bndbox_list,filename,new_filename + ".xml")
@@ -463,7 +463,7 @@ def take_dataset_to_YOLOtrain(Absolute_path,xml_path,img_path,label_list):
     for filename in filename_list:
         bndboxes = read_xml_annotation(xml_path, filename)
         new_bndboxes = []
-        YOLO_train_label.write(Absolute_path + "/" + img_path + filename.split('.')[0] + ".jpg")
+        YOLO_train_label.write(Absolute_path + "/" + img_path + filename.split('.')[0] + os.path.splitext(os.listdir(img_path)[0])[-1])
         for bndbox in bndboxes:
             xmin = bndbox[1]
             ymin = bndbox[2]

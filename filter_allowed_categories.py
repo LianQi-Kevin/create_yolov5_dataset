@@ -2,36 +2,6 @@ from ruamel import yaml
 import datetime
 from utils import *
 
-'''
-标签采用VOC的xml格式
-图片为jpg格式
-按标签类型比例分割数据集
-
-按照yolov5需求输出，标签自动转换为kitti格式
-按需求创建训练需要的yaml文件  并输出训练命令
-
-─── dataset
-    ├──source
-        ├── img
-        └── xml
-    ├── images
-        ├── train
-        └── val
-    ├── labels
-        ├── train
-        └── val
-    └── labels_xml
-        ├── train
-        └── val
-        
-注: 如果pycharm报错
-OSError: [WinError 1455] 页面文件太小，无法完成操作。 Error loading "C:\ProgramData\Anaconda3\envs\yolov5_6\lib\site-packages\torch\lib\caffe2_detectron_ops_gpu.dll" or one of its depe
-ndencies.
-则改小batch-size 并调大虚拟内存
-https://blog.csdn.net/weixin_43959833/article/details/116669523?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link
-'''
-
-
 def VOC_to_yolo(xml_path, img_Path, write_path, allow_sort):
     # mkdir(write_path)
     index = 0
@@ -100,8 +70,11 @@ scale = 0.9
 allow_sort = ["cat", "dog", "horse","person"]
 # 备注标签
 Floder = "example"
-# 训练时使用的预训练模型 yolov5m/s/x/l/n
+# 训练时使用的预训练模型 yolov5m/s/x/l/n 生成命令时使用，cfg文件会生成全部版本的
 model_name = "yolov5s"
+
+
+
 # 支持的模型类别
 cfg = ["yolov5n","yolov5s","yolov5m","yolov5l","yolov5x","yolov5n6","yolov5s6","yolov5m6","yolov5l6","yolov5x6"]
 # 今天的日期
