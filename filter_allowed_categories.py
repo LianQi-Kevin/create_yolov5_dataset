@@ -89,9 +89,9 @@ def get_sort_num(xml_file_dir, allow_sort):
 
 
 # VOC标签位置
-VOCxml_file_dir = "../Dataset/final_dataset/xml/"
+VOCxml_file_dir = "basic_dataset/labels_xml/"
 # 图片位置
-img_file_dir = "../Dataset/final_dataset/img/"
+img_file_dir = "basic_dataset/images/"
 # 输出文件夹位置
 output_dir = "./"
 # 比例系数
